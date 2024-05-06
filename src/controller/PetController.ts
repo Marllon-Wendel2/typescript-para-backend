@@ -22,12 +22,7 @@ export default class PetController {
             return res.status(400).json({error : "Especie inválida"})
         }
 
-        const novoPet = new PetEntity();
-            (novoPet.id = geraId()),
-            (novoPet.adotado = adotado),
-            (novoPet.especie = especie),
-            (novoPet.dataDeNascimento = dataDeNascimento),
-            (novoPet.nome = nome)
+        const novoPet = new PetEntity(nome, especie, dataDeNascimento,adotado);
            
         //funcao verifica se existe
         //const pet = listaDePets.find((pet) => pet.id === Number (id));
